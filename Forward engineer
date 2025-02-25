@@ -1,0 +1,278 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema ns_Sp25_21479_Group6
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema ns_Sp25_21479_Group6
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `ns_Sp25_21479_Group6` DEFAULT CHARACTER SET utf8 ;
+USE `ns_Sp25_21479_Group6` ;
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Directors`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Directors` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Directors` (
+  `directorID` INT NOT NULL,
+  `directorName` VARCHAR(45) NULL,
+  `directorBio` VARCHAR(45) NULL,
+  `dirGender` VARCHAR(45) NULL,
+  `dirNationality` VARCHAR(45) NULL,
+  PRIMARY KEY (`directorID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Movie`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Movie` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Movie` (
+  `movieID` INT NOT NULL,
+  `title` VARCHAR(200) NOT NULL,
+  `genre` VARCHAR(45) NULL,
+  `movieDesc` VARCHAR(1000) NULL,
+  `movieCountry` VARCHAR(100) NULL,
+  `directorID` INT NOT NULL,
+  PRIMARY KEY (`movieID`),
+  INDEX `fk_Movie_Directors1_idx` (`directorID` ASC) VISIBLE,
+  CONSTRAINT `fk_Movie_Directors1`
+    FOREIGN KEY (`directorID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Directors` (`directorID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Actor`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Actor` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Actor` (
+  `actorID` INT NOT NULL,
+  `actorName` VARCHAR(45) NULL,
+  `actorBio` VARCHAR(45) NULL,
+  `actorGender` VARCHAR(45) NULL,
+  `actorNationality` VARCHAR(45) NULL,
+  PRIMARY KEY (`actorID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`User`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`User` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`User` (
+  `userID` INT NOT NULL,
+  `displayName` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `dateCreated` DATETIME NULL,
+  `location` VARCHAR(45) NULL,
+  PRIMARY KEY (`userID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Reviews`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Reviews` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Reviews` (
+  `reviewID` INT NOT NULL,
+  `reviewText` VARCHAR(1000) NULL,
+  `timeOfReview` DATETIME NULL,
+  `numStars` INT NULL,
+  `userID` INT NOT NULL,
+  `movieID` INT NOT NULL,
+  PRIMARY KEY (`reviewID`),
+  INDEX `fk_Reviews_User1_idx` (`userID` ASC) VISIBLE,
+  INDEX `fk_Reviews_Movie1_idx` (`movieID` ASC) VISIBLE,
+  CONSTRAINT `fk_Reviews_User1`
+    FOREIGN KEY (`userID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`User` (`userID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Reviews_Movie1`
+    FOREIGN KEY (`movieID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Movie` (`movieID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Comments`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Comments` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Comments` (
+  `commentID` INT NOT NULL,
+  `commentText` VARCHAR(450) NOT NULL,
+  `commenterName` VARCHAR(45) NOT NULL,
+  `reviewID` INT NOT NULL,
+  `userID` INT NOT NULL,
+  PRIMARY KEY (`commentID`),
+  INDEX `fk_Comments_Reviews1_idx` (`reviewID` ASC) VISIBLE,
+  INDEX `fk_Comments_User1_idx` (`userID` ASC) VISIBLE,
+  CONSTRAINT `fk_Comments_Reviews1`
+    FOREIGN KEY (`reviewID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Reviews` (`reviewID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Comments_User1`
+    FOREIGN KEY (`userID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`User` (`userID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Activity`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Activity` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Activity` (
+  `notifID` INT NOT NULL,
+  `notifText` VARCHAR(450) NULL,
+  `userID` INT NOT NULL,
+  PRIMARY KEY (`notifID`),
+  INDEX `fk_Activity_User1_idx` (`userID` ASC) VISIBLE,
+  CONSTRAINT `fk_Activity_User1`
+    FOREIGN KEY (`userID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`User` (`userID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Tags`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Tags` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Tags` (
+  `tagID` INT NOT NULL,
+  `hashtag` VARCHAR(100) NULL,
+  PRIMARY KEY (`tagID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`TagLists`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`TagLists` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`TagLists` (
+  `reviewID` INT NOT NULL,
+  `tagID` INT NOT NULL,
+  `movieID` INT NOT NULL,
+  `userID` INT NOT NULL,
+  `tagListID` INT NOT NULL,
+  INDEX `fk_Reviews_has_Tags_Tags1_idx` (`tagID` ASC) VISIBLE,
+  INDEX `fk_Reviews_has_Tags_Reviews1_idx` (`reviewID` ASC) VISIBLE,
+  INDEX `fk_TagLists_Movie1_idx` (`movieID` ASC) VISIBLE,
+  INDEX `fk_TagLists_User1_idx` (`userID` ASC) VISIBLE,
+  PRIMARY KEY (`tagListID`, `reviewID`, `movieID`, `tagID`, `userID`),
+  CONSTRAINT `fk_Reviews_has_Tags_Reviews1`
+    FOREIGN KEY (`reviewID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Reviews` (`reviewID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Reviews_has_Tags_Tags1`
+    FOREIGN KEY (`tagID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Tags` (`tagID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TagLists_Movie1`
+    FOREIGN KEY (`movieID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Movie` (`movieID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_TagLists_User1`
+    FOREIGN KEY (`userID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`User` (`userID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Cast`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Cast` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Cast` (
+  `actorID` INT NOT NULL,
+  `movieID` INT NOT NULL,
+  `castID` INT NOT NULL,
+  `roleType` VARCHAR(45) NULL,
+  `characterName` VARCHAR(45) NULL,
+  PRIMARY KEY (`actorID`, `movieID`, `castID`),
+  INDEX `fk_Actor_has_Movie_Movie1_idx` (`movieID` ASC) VISIBLE,
+  INDEX `fk_Actor_has_Movie_Actor1_idx` (`actorID` ASC) VISIBLE,
+  CONSTRAINT `fk_Actor_has_Movie_Actor1`
+    FOREIGN KEY (`actorID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Actor` (`actorID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Actor_has_Movie_Movie1`
+    FOREIGN KEY (`movieID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Movie` (`movieID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`Subscriptions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`Subscriptions` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`Subscriptions` (
+  `subscriptionID` INT NOT NULL,
+  `subscriptionTier` VARCHAR(45) NULL,
+  `subscriptionPrice` DECIMAL(5,2) NULL,
+  `subEnrollment` DATE NULL,
+  PRIMARY KEY (`subscriptionID`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `ns_Sp25_21479_Group6`.`billingHistory`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `ns_Sp25_21479_Group6`.`billingHistory` ;
+
+CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`billingHistory` (
+  `userID` INT NOT NULL,
+  `subscriptionID` INT NOT NULL,
+  `paymentType` VARCHAR(45) NULL,
+  `billingAddress` VARCHAR(200) NULL,
+  PRIMARY KEY (`userID`, `subscriptionID`),
+  INDEX `fk_User_has_Subscriptions_Subscriptions1_idx` (`subscriptionID` ASC) VISIBLE,
+  INDEX `fk_User_has_Subscriptions_User1_idx` (`userID` ASC) VISIBLE,
+  CONSTRAINT `fk_User_has_Subscriptions_User1`
+    FOREIGN KEY (`userID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`User` (`userID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_User_has_Subscriptions_Subscriptions1`
+    FOREIGN KEY (`subscriptionID`)
+    REFERENCES `ns_Sp25_21479_Group6`.`Subscriptions` (`subscriptionID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
