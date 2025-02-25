@@ -272,6 +272,163 @@ CREATE TABLE IF NOT EXISTS `ns_Sp25_21479_Group6`.`billingHistory` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- Insert data into Directors
+INSERT INTO `Directors` (`directorID`, `directorName`, `directorBio`, `dirGender`, `dirNationality`) VALUES
+(1, 'Steven Spielberg', 'Renowned director', 'Male', 'American'),
+(2, 'Kathryn Bigelow', 'Pioneering female director', 'Female', 'American'),
+(3, 'Christopher Nolan', 'Innovative storyteller', 'Male', 'British'),
+(4, 'Ava DuVernay', 'Acclaimed filmmaker', 'Female', 'American'),
+(5, 'Quentin Tarantino', 'Cult classic creator', 'Male', 'American'),
+(6, 'Sofia Coppola', 'Artistic director', 'Female', 'American'),
+(7, 'Martin Scorsese', 'Iconic filmmaker', 'Male', 'American'),
+(8, 'Greta Gerwig', 'Fresh new voice', 'Female', 'American'),
+(9, 'Ridley Scott', 'Epic director', 'Male', 'British'),
+(10, 'Jane Campion', 'Visionary filmmaker', 'Female', 'New Zealander');
+
+-- Insert data into Movie
+INSERT INTO `Movie` (`movieID`, `title`, `genre`, `movieDesc`, `movieCountry`, `directorID`) VALUES
+(1, 'The Great Adventure', 'Action', 'An epic journey of heroes.', 'USA', 1),
+(2, 'Romantic Escape', 'Romance', 'A heartwarming love story.', 'UK', 2),
+(3, 'Mystery Manor', 'Mystery', 'A puzzling tale set in an old mansion.', 'Canada', 3),
+(4, 'Comedy Nights', 'Comedy', 'Laugh out loud with this fun romp.', 'USA', 4),
+(5, 'Sci-Fi Odyssey', 'Sci-Fi', 'A futuristic saga beyond the stars.', 'USA', 5),
+(6, 'Historical Heroes', 'History', 'A recount of legendary events.', 'UK', 6),
+(7, 'Drama Unfolds', 'Drama', 'An intense story of life and loss.', 'Australia', 7),
+(8, 'Horror House', 'Horror', 'A chilling tale that will haunt you.', 'USA', 8),
+(9, 'Fantasy Realm', 'Fantasy', 'A magical adventure in another world.', 'New Zealand', 9),
+(10, 'Thriller Edge', 'Thriller', 'A suspenseful ride with unexpected twists.', 'USA', 10);
+
+-- Insert data into Actor
+INSERT INTO `Actor` (`actorID`, `actorName`, `actorBio`, `actorGender`, `actorNationality`) VALUES
+(1, 'Leonardo DiCaprio', 'Versatile actor known for dramatic roles.', 'Male', 'American'),
+(2, 'Meryl Streep', 'Acclaimed performer with many accolades.', 'Female', 'American'),
+(3, 'Denzel Washington', 'Commanding presence on screen.', 'Male', 'American'),
+(4, 'Natalie Portman', 'Award-winning talent and performer.', 'Female', 'Israeli'),
+(5, 'Brad Pitt', 'Charismatic actor with a diverse portfolio.', 'Male', 'American'),
+(6, 'Angelina Jolie', 'Known for both acting and directing.', 'Female', 'American'),
+(7, 'Tom Hanks', 'Beloved actor with timeless roles.', 'Male', 'American'),
+(8, 'Scarlett Johansson', 'Dynamic performer in various genres.', 'Female', 'American'),
+(9, 'Will Smith', 'Energetic star with blockbuster hits.', 'Male', 'American'),
+(10, 'Emma Stone', 'Charming actress with a unique style.', 'Female', 'American');
+
+-- Insert data into User
+INSERT INTO `User` (`userID`, `displayName`, `email`, `dateCreated`, `location`) VALUES
+(1, 'user1', 'user1@example.com', '2025-01-01 10:00:00', 'New York'),
+(2, 'user2', 'user2@example.com', '2025-01-02 11:00:00', 'Los Angeles'),
+(3, 'user3', 'user3@example.com', '2025-01-03 12:00:00', 'Chicago'),
+(4, 'user4', 'user4@example.com', '2025-01-04 13:00:00', 'Houston'),
+(5, 'user5', 'user5@example.com', '2025-01-05 14:00:00', 'Phoenix'),
+(6, 'user6', 'user6@example.com', '2025-01-06 15:00:00', 'Philadelphia'),
+(7, 'user7', 'user7@example.com', '2025-01-07 16:00:00', 'San Antonio'),
+(8, 'user8', 'user8@example.com', '2025-01-08 17:00:00', 'San Diego'),
+(9, 'user9', 'user9@example.com', '2025-01-09 18:00:00', 'Dallas'),
+(10, 'user10', 'user10@example.com', '2025-01-10 19:00:00', 'San Jose');
+
+-- Insert data into Reviews
+INSERT INTO `Reviews` (`reviewID`, `reviewText`, `timeOfReview`, `numStars`, `userID`, `movieID`) VALUES
+(1, 'Amazing movie! A must-watch.', '2025-02-20 10:00:00', 5, 1, 1),
+(2, 'Really enjoyed it. Great performances.', '2025-02-21 11:00:00', 4, 2, 2),
+(3, 'Not bad at all, but could improve.', '2025-02-22 12:00:00', 3, 3, 3),
+(4, 'Could be better in parts.', '2025-02-23 13:00:00', 2, 4, 4),
+(5, 'Loved every minute of it!', '2025-02-24 14:00:00', 5, 5, 5),
+(6, 'It was okay; some good moments.', '2025-02-25 15:00:00', 3, 6, 6),
+(7, 'A masterpiece in storytelling.', '2025-02-26 16:00:00', 5, 7, 7),
+(8, 'Quite disappointing overall.', '2025-02-27 17:00:00', 1, 8, 8),
+(9, 'Entertaining and engaging.', '2025-02-28 18:00:00', 4, 9, 9),
+(10, 'Will definitely watch again.', '2025-03-01 19:00:00', 4, 10, 10);
+
+-- Insert data into Comments
+INSERT INTO `Comments` (`commentID`, `commentText`, `commenterName`, `reviewID`, `userID`) VALUES
+(1, 'Totally agree with this review!', 'commenter1', 1, 2),
+(2, 'I have a different view on this.', 'commenter2', 2, 3),
+(3, 'Well said and insightful.', 'commenter3', 3, 4),
+(4, 'Couldn''t disagree more with you.', 'commenter4', 4, 5),
+(5, 'Great insight; thanks for sharing.', 'commenter5', 5, 6),
+(6, 'I appreciate your honest opinion.', 'commenter6', 6, 7),
+(7, 'Interesting perspective indeed.', 'commenter7', 7, 8),
+(8, 'I love this review so much!', 'commenter8', 8, 9),
+(9, 'This was very helpful.', 'commenter9', 9, 10),
+(10, 'I enjoyed reading your comment.', 'commenter10', 10, 1);
+
+-- Insert data into Activity
+INSERT INTO `Activity` (`notifID`, `notifText`, `userID`) VALUES
+(1, 'User logged in successfully.', 1),
+(2, 'User updated profile information.', 2),
+(3, 'User posted a new review.', 3),
+(4, 'User commented on a review.', 4),
+(5, 'User liked a movie.', 5),
+(6, 'User subscribed to a plan.', 6),
+(7, 'User shared a review on social media.', 7),
+(8, 'User added a new comment.', 8),
+(9, 'User changed account settings.', 9),
+(10, 'User logged out.', 10);
+
+-- Insert data into Tags
+INSERT INTO `Tags` (`tagID`, `hashtag`) VALUES
+(1, '#Action'),
+(2, '#Romance'),
+(3, '#Mystery'),
+(4, '#Comedy'),
+(5, '#SciFi'),
+(6, '#History'),
+(7, '#Drama'),
+(8, '#Horror'),
+(9, '#Fantasy'),
+(10, '#Thriller');
+
+-- Insert data into TagLists
+-- Note: Here each row uses corresponding existing reviewID, tagID, movieID, and userID.
+INSERT INTO `TagLists` (`reviewID`, `tagID`, `movieID`, `userID`, `tagListID`) VALUES
+(1, 1, 1, 1, 1),
+(2, 2, 2, 2, 2),
+(3, 3, 3, 3, 3),
+(4, 4, 4, 4, 4),
+(5, 5, 5, 5, 5),
+(6, 6, 6, 6, 6),
+(7, 7, 7, 7, 7),
+(8, 8, 8, 8, 8),
+(9, 9, 9, 9, 9),
+(10, 10, 10, 10, 10);
+
+-- Insert data into Cast
+INSERT INTO `Cast` (`actorID`, `movieID`, `castID`, `roleType`, `characterName`) VALUES
+(1, 1, 1, 'Lead', 'Hero'),
+(2, 2, 1, 'Supporting', 'Sidekick'),
+(3, 3, 1, 'Lead', 'Detective'),
+(4, 4, 1, 'Lead', 'Protagonist'),
+(5, 5, 1, 'Supporting', 'Antagonist'),
+(6, 6, 1, 'Lead', 'Explorer'),
+(7, 7, 1, 'Supporting', 'Friend'),
+(8, 8, 1, 'Lead', 'Survivor'),
+(9, 9, 1, 'Supporting', 'Companion'),
+(10, 10, 1, 'Lead', 'Champion');
+
+-- Insert data into Subscriptions
+INSERT INTO `Subscriptions` (`subscriptionID`, `subscriptionTier`, `subscriptionPrice`, `subEnrollment`) VALUES
+(1, 'Basic', 9.99, '2025-01-15'),
+(2, 'Standard', 14.99, '2025-01-16'),
+(3, 'Premium', 19.99, '2025-01-17'),
+(4, 'Basic', 9.99, '2025-01-18'),
+(5, 'Standard', 14.99, '2025-01-19'),
+(6, 'Premium', 19.99, '2025-01-20'),
+(7, 'Basic', 9.99, '2025-01-21'),
+(8, 'Standard', 14.99, '2025-01-22'),
+(9, 'Premium', 19.99, '2025-01-23'),
+(10, 'Standard', 14.99, '2025-01-24');
+
+-- Insert data into billingHistory
+INSERT INTO `billingHistory` (`userID`, `subscriptionID`, `paymentType`, `billingAddress`) VALUES
+(1, 1, 'Credit Card', '123 Main St, New York, NY'),
+(2, 2, 'PayPal', '456 Oak Ave, Los Angeles, CA'),
+(3, 3, 'Debit Card', '789 Pine Rd, Chicago, IL'),
+(4, 4, 'Credit Card', '101 Maple Dr, Houston, TX'),
+(5, 5, 'Credit Card', '202 Birch Ln, Phoenix, AZ'),
+(6, 6, 'Debit Card', '303 Cedar St, Philadelphia, PA'),
+(7, 7, 'PayPal', '404 Spruce Ct, San Antonio, TX'),
+(8, 8, 'Credit Card', '505 Elm St, San Diego, CA'),
+(9, 9, 'Debit Card', '606 Walnut St, Dallas, TX'),
+(10, 10, 'Credit Card', '707 Chestnut Blvd, San Jose, CA');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
