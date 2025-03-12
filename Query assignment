@@ -1,0 +1,22 @@
+#Query 1 
+- multiple table join, 
+
+traditional subquery, 
+
+correlated subquery, 
+
+GROUP BY, 
+
+GROUP BY with HAVING
+
+multi condition WHERE
+
+Built-in functions (e.g., AVG) or a calculated field
+#Charlie's query
+
+REGEXP
+
+NOT EXISTS
+
+
+
