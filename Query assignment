@@ -3,10 +3,13 @@
 #Charlie's query
 
 traditional subquery, 
+billing history and payment type used
 
 correlated subquery, 
+Detect actors with the most roles
 
-GROUP BY, 
+GROUP BY
+- group user by type of subsciption
 
 GROUP BY with HAVING
 -- directior nationality with highest ratings
@@ -17,12 +20,13 @@ multi condition WHERE
 or would it just be the one date
 
 Built-in functions (e.g., AVG) or a calculated field
+- total billed for user (multiplication)
 
 
 REGEXP
 - add more user rows/ add some of same location "regexp city name"
 
 NOT EXISTS
-
+- finding users who have left no reviews. 
 
 
