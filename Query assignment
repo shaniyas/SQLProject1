@@ -1,5 +1,6 @@
 #Query 1 
 - multiple table join, 
+#Charlie's query
 
 traditional subquery, 
 
@@ -8,13 +9,18 @@ correlated subquery,
 GROUP BY, 
 
 GROUP BY with HAVING
+-- directior nationality with highest ratings
 
 multi condition WHERE
 
+- where left > 5 reviews AND/OR seperate condition (date create) **is it possible to do a time frame I.E. if we wanted all users after march could we get that 
+or would it just be the one date
+
 Built-in functions (e.g., AVG) or a calculated field
-#Charlie's query
+
 
 REGEXP
+- add more user rows/ add some of same location "regexp city name"
 
 NOT EXISTS
 
