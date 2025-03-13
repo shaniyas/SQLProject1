@@ -27,6 +27,6 @@ REGEXP
 - add more user rows/ add some of same location "regexp city name"
 
 NOT EXISTS
-- finding users who have left no reviews. 
+- finding users who have left no reviews.  (TP_Q1)
 
 
