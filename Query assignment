@@ -38,3 +38,10 @@ NOT EXISTS
 
 stored procedures: create procedure TP_QX();
 
+TP_Q2
+select sum(subscriptionPrice) as "Intl Revenue"
+from Subscriptions
+Join billingHistory on Subscriptions.subscriptionID = billingHistory.subscriptionID
+join User on User.userID = billingHistory.userID
+where country != 'USA'
+
