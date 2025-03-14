@@ -36,4 +36,5 @@ REGEXP
 NOT EXISTS
 - finding users who have left no reviews.  (TP_Q1)
 
+stored procedures: create procedure TP_QX();
 
