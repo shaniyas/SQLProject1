@@ -12,7 +12,7 @@ GROUP BY User.displayName
 HAVING COUNT(billingHistory.subscriptionID) >= 1;
 
 correlated subquery, 
-Detect actors with the most roles
+Detect directors with most movies.
 
 GROUP BY
 - group user by type of subsciption
