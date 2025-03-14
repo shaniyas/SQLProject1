@@ -4,6 +4,12 @@
 
 traditional subquery, - Saniya
 billing history and payment type used
+SELECT user.displayName, COUNT(DISTINCT billingHistory.subscriptionID) AS numSubscriptions,  SUM(Subscriptions.subscriptionPrice) AS totalAmountSpent
+FROM User
+JOIN billingHistory ON User.userID = billingHistory.userID
+JOIN Subscriptions ON billingHistory.subscriptionID = Subscriptions.subscriptionID
+GROUP BY User.displayName
+HAVING COUNT(DISTINCT billingHistory.subscriptionID) >= 1;
 
 correlated subquery, 
 Detect actors with the most roles
