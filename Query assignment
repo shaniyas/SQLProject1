@@ -3,8 +3,8 @@
 #Charlie's query
 
 traditional subquery, - Saniya
-billing history and payment type used
-SELECT user.displayName, COUNT(DISTINCT billingHistory.subscriptionID) AS numSubscriptions,  SUM(Subscriptions.subscriptionPrice) AS totalAmountSpent
+#billing history and payment type used
+SELECT displayName, COUNT(DISTINCT billingHistory.subscriptionID) AS numSubscriptions,  SUM(Subscriptions.subscriptionPrice) AS totalAmountSpent
 FROM User
 JOIN billingHistory ON User.userID = billingHistory.userID
 JOIN Subscriptions ON billingHistory.subscriptionID = Subscriptions.subscriptionID
@@ -22,9 +22,10 @@ GROUP BY with HAVING
 
 multi condition WHERE
 
-- where left > 5 reviews AND/OR seperate condition (date create) **is it possible to do a time frame I.E. if we wanted all users after march could we get that 
+- where left > 5 reviews AND/OR seperate condition (date create) 
+**is it possible to do a time frame I.E. if we wanted all users after march could we get that 
 or would it just be the one date
-
+date time functions - provides time framews
 Built-in functions (e.g., AVG) or a calculated field
 - total billed for user (multiplication)
 
