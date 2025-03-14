@@ -23,6 +23,7 @@ Letterboxd is a social media platform for film lovers, where users can log, rate
 [query matrix table] , [explanation/justification of each query], [screenshot of results]
 
 2. Query 2 retrieves billing history of users. As well as counting the number of subscriptions the user has had throughout their enrollment. For example, if a user had a free account and then upgraded to a paid subsription. The query then totals the total amount billed to users as of current date.
+   
 
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
