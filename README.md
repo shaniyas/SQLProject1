@@ -11,7 +11,7 @@
 - [Charlie Jones]()
 
 ## Project Description
-[description]
+Letterboxd is a social media platform for film lovers, where users can log, rate, review, and discuss movies. The platform includes features like user profiles, movie ratings, reviews, lists, and social interactions. Our SQL program aims to store and organize this data for easy retrieval.
 
 ## Data Model
 [explanation] [screenshot]
