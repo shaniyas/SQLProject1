@@ -33,17 +33,17 @@ Letterboxd is a social media platform for film lovers, where users can log, rate
 
 
 
-3. Query 3 retrieves the billing history of users. As well as taking into account the number of subscriptions the user has had throughout their enrollment. For example, this query filters for users who had a free account and then upgraded to a paid subsription, or vise-versa. The query then totals the total amount billed to users as of current date.
+3. This query retrieves a user’s complete billing history, including total subscriptions and amount spent. This can help Letterboxd to track user subscription behavior. It helps in identifying loyal customers who upgrade plans, users who downgrade, and potential customers who might leave the platform.
 <img width="1152" alt="Screenshot 2025-03-16 at 11 12 49 AM" src="https://github.com/user-attachments/assets/81c1a7e8-c124-465b-b46e-6cc7c7618fbe" />
-4. This query presents the director who has directed the most movies in our database.
+4. This query presents the director who has directed the most movies in our database. Useful for analytics on popular filmmakers within Letterboxd’s dataset. This information can enhance search recommendations and be used for content curation.
 
 <img width="1200" alt="Screenshot 2025-03-17 at 12 37 08 PM" src="https://github.com/user-attachments/assets/3c9911d7-7991-4fb6-b721-c2243efb3b4e" />
 
-5. Query 5 presents the number of users per subscription tier, there are three tiers comprising of free, pro, and patron.
+5. Query 5 presents the number of users per subscription tier, there are three tiers comprising of free, pro, and patron. This can analyze the popularity of different subscription tiers and evaluate pricing strategies. If too many users are on the free tier, Letterboxd may need incentives to push users toward paid tiers
   <img width="832" alt="Screenshot 2025-03-17 at 12 47 27 PM" src="https://github.com/user-attachments/assets/72b75f68-4197-4ebe-9b72-9ad03fc25025" />
 
 
-6. This query presents Users who have left more than 2 reviews and have had their account since January 5th.
+6. This query presents Users who have left more than 2 reviews and have had their account since January 5th. This can identify highly engaged users who actively contribute content to the platform. These users might be targeted for loyalty rewards or community-building efforts.
 
 
 <img width="878" alt="Screenshot 2025-03-17 at 12 48 12 PM" src="https://github.com/user-attachments/assets/2df15a3e-1375-46ec-8430-2a704361ea3a" />
