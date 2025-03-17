@@ -24,7 +24,7 @@ Users engage with movies by writing reviews, which is captured in the Reviews ta
 
 More user engagement is represented by the Comments table. Users can comment on movie reviews, which forms a one-to-many relationship between Reviews and Comments, as each review can have multiple comments. Each comment is tied to a specific user, creating another one-to-many relationship between the User and Comments entities.
 
-The platform operates on a subscription-based model, which is reflected in the Subscriptions entity. Users may subscribe to different tiers, such as Free, Pro, or Patron, to unlock various platform features. The BillingHistory table captures payment transactions related to these subscriptions. There is a one-to-many relationship between User and BillingHistory, as a user can have multiple subscription payments over time. Similarly, a one-to-many relationship exists between Subscriptions and BillingHistory, as each subscription type can be linked to multiple transactions.
+The platform operates on a subscription-based model, which is reflected in the Subscriptions entity. Users may subscribe to different tiers, such as Free, Pro, or Patron, to unlock various platform features. The billingHistory table captures payment transactions related to these subscriptions. There is a one-to-many relationship between User and billingHistory, as a user can have multiple subscription payments over time. Similarly, a one-to-many relationship exists between Subscriptions and billingHistory, as each subscription type can be linked to multiple transactions.
 
 <img width="917" alt="Screenshot 2025-03-17 at 1 11 45 PM" src="https://github.com/user-attachments/assets/d0457f75-6f2f-4be3-a5cb-4ce9258e04b2" />
 
