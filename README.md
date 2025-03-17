@@ -14,7 +14,8 @@
 Letterboxd is a social media platform for film lovers, where users can log, rate, review, and discuss movies. The platform includes features like user profiles, movie ratings, reviews, lists, and social interactions. Our SQL program aims to store and organize this data for easy retrieval.
 
 ## Data Model
-[explanation] [screenshot]
+[explanation]
+<img width="917" alt="Screenshot 2025-03-17 at 1 11 45 PM" src="https://github.com/user-attachments/assets/d0457f75-6f2f-4be3-a5cb-4ce9258e04b2" />
 
 ## Data Dictionary
 [screenshot]
