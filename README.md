@@ -29,7 +29,18 @@ The platform operates on a subscription-based model, which is reflected in the S
 <img width="917" alt="Screenshot 2025-03-17 at 1 11 45 PM" src="https://github.com/user-attachments/assets/d0457f75-6f2f-4be3-a5cb-4ce9258e04b2" />
 
 ## Data Dictionary
-[screenshot]
+<img width="799" alt="Screenshot 2025-03-17 at 1 58 46 PM" src="https://github.com/user-attachments/assets/4dbd0579-3d80-48b9-bf02-81d6019d51d1" />
+
+<img width="796" alt="Screenshot 2025-03-17 at 1 59 39 PM" src="https://github.com/user-attachments/assets/3cb999cd-5261-4612-a76b-03811ab96ac4" />
+
+<img width="805" alt="Screenshot 2025-03-17 at 2 00 42 PM" src="https://github.com/user-attachments/assets/7a623de5-d710-4790-b2e9-019e4e1a324e" />
+
+<img width="803" alt="Screenshot 2025-03-17 at 2 00 06 PM" src="https://github.com/user-attachments/assets/21f7ce21-cb53-4b36-885c-69abd7e48cb5" />
+
+<img width="807" alt="Screenshot 2025-03-17 at 2 01 06 PM" src="https://github.com/user-attachments/assets/a3009606-9a42-4b9a-9a90-cbd6320d4030" />
+
+
+
 
 ## Queries
 [query matrix table] , [explanation/justification of each query], [screenshot of results]
