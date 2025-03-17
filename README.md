@@ -95,11 +95,15 @@ The platform operates on a subscription-based model, which is reflected in the S
 
 <img width="1144" alt="Screenshot 2025-03-17 at 1 25 56 PM" src="https://github.com/user-attachments/assets/1615ae9a-14ac-4ebe-b07e-0be736a81a2a" />
 
-9. Query 9 shows the top 10 movies with the highest ratings, while also showing who the director is and how many reviews they had. A manager could use this information to understand which movies their customers like better and utilize that information to promote these higher-rated movies to other customers.
+9. Query 9 shows the top 10 movies with the highest ratings, while also showing who the director is and how many reviews they had. A manager could use this information to understand which movies their customers like better and use that information to promote these higher-rated movies to other customers.
+    
 ![Query #9](https://github.com/user-attachments/assets/02bbbeae-fca7-43ad-a7eb-1090ae97742a)
 
 
-10. 
+10. Query 10 lists the actors in the most movies in our database. This can help managers find the most experienced or popular actors and utilize them for marketing campaigns.
+    
+![Query #10](https://github.com/user-attachments/assets/0724af7b-ece6-4574-879d-8cf8d91d1046)
+
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
 
