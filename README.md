@@ -43,9 +43,9 @@ The platform operates on a subscription-based model, which is reflected in the S
 
 
 ## Queries
+<img width="948" alt="Screenshot 2025-03-17 at 2 08 24 PM" src="https://github.com/user-attachments/assets/e5fc9ca6-8d0a-4801-b8bb-73632d8d9062" />
 
 
-<img width="986" alt="Screenshot 2025-03-17 at 1 51 33 PM" src="https://github.com/user-attachments/assets/f4835f60-2941-4552-940f-a53a62867518" />
 
 1. Query 1 displays the list of users who made their account before 2024 and have not written any reviews yet. Query 1 allows the managers to see which accounts are inactive. It is expensive to run a platform with many users, so by deleting any inactive accounts, the managers are able to cut down on costs. The deletion of inactive users also improves the security of the platform, as these accounts tend to be more susceptible to hacking.
 <img width="1150" alt="TPQ1 updated" src="https://github.com/user-attachments/assets/a19c9dbd-e2d1-4fa9-867a-838ba0b12265" />
