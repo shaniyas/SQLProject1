@@ -70,3 +70,5 @@ Letterboxd is a social media platform for film lovers, where users can log, rate
 
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
+
+Additional information: Each query listed above is marked in the database using stored procedures which can be called using the following format: CALL TP_Q1();
