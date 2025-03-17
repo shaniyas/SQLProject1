@@ -48,6 +48,8 @@ Letterboxd is a social media platform for film lovers, where users can log, rate
 
 <img width="878" alt="Screenshot 2025-03-17 at 12 48 12 PM" src="https://github.com/user-attachments/assets/2df15a3e-1375-46ec-8430-2a704361ea3a" />
 
+7. Query 7 displays the most reviewed movies released in the 70s. A manager may want to know this information to see what movies they should collaborate with for merchandise and other items to draw in more customers.
+<img width="754" alt="Screenshot 2025-03-17 at 12 59 51 PM" src="https://github.com/user-attachments/assets/591b362d-ad62-472e-85bd-d4c48ff51711" />
 
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
