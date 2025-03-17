@@ -14,6 +14,17 @@
 Letterboxd is a social media platform for film lovers, where users can log, rate, review, and discuss movies. The platform includes features like user profiles, movie ratings, reviews, lists, and social interactions. Our SQL program aims to store and organize this data for easy retrieval.
 
 ## Data Model
+ Our model is based on the structure of Letterboxd, a social media platform for film enthusiasts. The User entity represents individuals who engage with the platform by reviewing, rating, and discussing movies. Each user can have multiple activities recorded, such as logging in, commenting, and subscribing to different membership tiers. This is represented by the one-to-many relationship between the User entity and the Activity and Comments entities.
+
+The core of the model revolves around movies. The Movie entity stores information such as title, genre, country of origin, runtime, and release date. Each movie is directed by a filmmaker, which establishes a one-to-many relationship between the Directors entity and the Movie entity, as a single director can be responsible for multiple films.
+
+Movies also feature actors, which is reflected in the Cast table. Since a movie can have multiple actors, and an actor can appear in multiple movies, we establish a many-to-many relationship between the Movie and Actor entities, which is managed by the Cast associative table. The Cast table records additional details, such as the role type and character name of the actor in the respective film.
+
+Users engage with movies by writing reviews, which is captured in the Reviews table. A one-to-many relationship exists between the User and Reviews entities because a user can submit multiple reviews, but each review belongs to only one user. Similarly, a one-to-many relationship is established between Movie and Reviews, as a movie can have multiple reviews.
+
+More user engagement is represented by the Comments table. Users can comment on movie reviews, which forms a one-to-many relationship between Reviews and Comments, as each review can have multiple comments. Each comment is tied to a specific user, creating another one-to-many relationship between the User and Comments entities.
+
+The platform operates on a subscription-based model, which is reflected in the Subscriptions entity. Users may subscribe to different tiers, such as Free, Pro, or Patron, to unlock various platform features. The BillingHistory table captures payment transactions related to these subscriptions. There is a one-to-many relationship between User and BillingHistory, as a user can have multiple subscription payments over time. Similarly, a one-to-many relationship exists between Subscriptions and BillingHistory, as each subscription type can be linked to multiple transactions.
 
 <img width="917" alt="Screenshot 2025-03-17 at 1 11 45 PM" src="https://github.com/user-attachments/assets/d0457f75-6f2f-4be3-a5cb-4ce9258e04b2" />
 
