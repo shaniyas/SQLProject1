@@ -35,11 +35,11 @@ Letterboxd is a social media platform for film lovers, where users can log, rate
 
 3. Query 3 retrieves the billing history of users. As well as counting the number of subscriptions the user has had throughout their enrollment. For example, if a user had a free account and then upgraded to a paid subsription. The query then totals the total amount billed to users as of current date.
 <img width="1152" alt="Screenshot 2025-03-16 at 11 12 49 AM" src="https://github.com/user-attachments/assets/81c1a7e8-c124-465b-b46e-6cc7c7618fbe" />
-
-4. Query 4 presents the number of users per subscription tier, there are three tiers comprising of free, pro, and patron.
+4.
+5. Query 5 presents the number of users per subscription tier, there are three tiers comprising of free, pro, and patron.
    <img width="1200" alt="Screenshot 2025-03-17 at 12 37 08 PM" src="https://github.com/user-attachments/assets/3c9911d7-7991-4fb6-b721-c2243efb3b4e" />
 
-5. This query presents Users who have left more than 2 reviews and have had their account since January 5th.
+6. This query presents Users who have left more than 2 reviews and have had their account since January 5th.
 
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
