@@ -8,7 +8,7 @@
 
 - [Saniya Bedi](https://github.com/Saniya-Bedi)
 
-- [Charlie Jones]()
+- [Charlie Jones](https://github.com/jonescharlie)
 
 ## Project Description
 Letterboxd is a social media platform for film lovers, where users can log, rate, review, and discuss movies. The platform includes features like user profiles, movie ratings, reviews, lists, and social interactions. Our SQL program aims to store and organize this data for easy retrieval.
