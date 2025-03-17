@@ -80,6 +80,10 @@ The platform operates on a subscription-based model, which is reflected in the S
 7. Query 7 displays the most reviewed movies released in the 70s. A manager may want to know this information to see what movies they should collaborate with for merchandise and other items to draw in more customers.
 <img width="754" alt="Screenshot 2025-03-17 at 12 59 51 PM" src="https://github.com/user-attachments/assets/591b362d-ad62-472e-85bd-d4c48ff51711" />
 
+8. Query 8 displays the times that users are active, ordered from most to least active. A manager may use this information to see what times are the best for sending out any promotional or informational emails and notifications.
+
+<img width="1144" alt="Screenshot 2025-03-17 at 1 25 56 PM" src="https://github.com/user-attachments/assets/1615ae9a-14ac-4ebe-b07e-0be736a81a2a" />
+
    ## Database Information
 Database Name: ns_Sp25_21479_Group6
 
